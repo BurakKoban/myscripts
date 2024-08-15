@@ -9,7 +9,7 @@ curl --request POST --data @payload.json http://127.0.0.1:8200/v1/auth/userpass/
   # "wrap_info": null,
   # "warnings": null,
   # "auth": {
-    # "client_token": "hvs.CAESIHCZKgpsd2i5hdbpF2BwaCFfuNHo_2-r6TyeX3v85h3AGh4KHGh2cy5FdWVGU1h4VkhlbVdpZ25DUFZFbXplbnE",
+    # "client_token": "???"
     # "accessor": "5NXcPi5mw5Yk1kbpQZxlspdM",
     # "policies": [
       # "default",
