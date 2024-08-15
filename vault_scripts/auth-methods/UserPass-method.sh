@@ -53,7 +53,7 @@ Password (will be hidden):
 # 
 # Key                    Value
 # ---                    -----
-# token                  hvs.CAESILNcP-AfJqVDPvvDhPoOoyAd96xtqCT7C6ShIDu8OKaVGh4KHGh2cy5NT1RWRkdLZ3JYSFNyQmxwTVV2ZFhZcGs
+# token                  ???
 # token_accessor         sXnz1BXZspLE7V9wWVrWEQnn
 # token_duration         768h
 # token_renewable        true

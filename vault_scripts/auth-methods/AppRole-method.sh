@@ -49,7 +49,7 @@ vault write auth/approle/login role_id=c92a8bc4-917b-7f1c-412b-ee87dee64bf8 secr
 
 # Key                     Value
 # ---                     -----
-# token                   hvs.CAESIOcZxN-CAJ-6msNINBT_yYicjBMbPKxHWzWr3Acn4t2SGh4KHGh2cy54alJ2Z2NFVmlLMHdaNnpaOGI5VHJUWUY
+# token                   ???
 # token_accessor          pj1RVd1nEe6iLnpCASteZBpp
 # token_duration          20m
 # token_renewable         true
