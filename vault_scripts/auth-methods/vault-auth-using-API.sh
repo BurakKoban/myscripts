@@ -2,10 +2,6 @@ curl --header "X-Vault-Token: xxx.XXXXXXXXXXXXXXXXXXXXXXXX" --request POST --dat
 
 curl --header "X-Vault-Token: xxx.XXXXXXXXXXXXXXXXXXXXXXXX" --request POST --data @policies.json http://127.0.0.1:8200/v1/auth/approle/role/vaultcourse
 
-#  curl --header "X-Vault-Token: xxx.XXXXXXXXXXXXXXXXXXXXXXXX" --request POST --data @auth.json https://vault.ops.bcaa.bc.ca/v1/sys/auth/approle  # To create an approle
-
-#  curl --header "X-Vault-Token: xxx.XXXXXXXXXXXXXXXXXXXXXXXX" --request POST --data @policies.json https://vault.ops.bcaa.bc.ca/v1/auth/approle/role/vaultcourse # To create a role
-
 curl --header "X-Vault-Token: xxx.XXXXXXXXXXXXXXXXXXXXXXXX" http://127.0.0.1:8200/v1/auth/approle/role/vaultcourse/role-id  | jq # To fetch the role id
 
 {
