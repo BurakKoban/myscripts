@@ -8,7 +8,7 @@ vault token create -policy=readonly-policy -period=24h
 
 # Key                  Value
 # ---                  -----
-# token                hvs.CAESIG91AzK6v0M6vVI9P8uOkUK6I0ksyB73zETDgoBJtbZeGh4KHGh2cy44OEtjRkNUV2ZibHlpdzdRVHZCWGtEVGU
+# token                ???
 # token_accessor       Nn4wVHywTIfpWhPNcIAWqmdI
 # token_duration       24h
 # token_renewable      true
@@ -21,7 +21,7 @@ vault token create -policy=readonly-policy -period=24h
 vault token create -policy=readonly-policy -period=24h -use-limit=2
 
 
-vault token lookup hvs.CAESIG91AzK6v0M6vVI9P8uOkUK6I0ksyB73zETDgoBJtbZeGh4KHGh2cy44OEtjRkNUV2ZibHlpdzdRVHZCWGtEVGU
+vault token lookup ????
 
 # Key                 Value
 # ---                 -----
@@ -32,7 +32,7 @@ vault token lookup hvs.CAESIG91AzK6v0M6vVI9P8uOkUK6I0ksyB73zETDgoBJtbZeGh4KHGh2c
 # entity_id           n/a
 # expire_time         2023-08-22T11:03:24.9686877-07:00
 # explicit_max_ttl    0s
-# id                  hvs.CAESIG91AzK6v0M6vVI9P8uOkUK6I0ksyB73zETDgoBJtbZeGh4KHGh2cy44OEtjRkNUV2ZibHlpdzdRVHZCWGtEVGU
+# id                  ???
 # issue_time          2023-08-21T11:03:24.9686964-07:00
 # meta                <nil>
 # num_uses            0
