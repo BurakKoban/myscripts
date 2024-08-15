@@ -1,8 +1,8 @@
-curl --header "X-Vault-Token: xxx.XXXXXXXXXXXXXXXXXXXXXXXX" --request POST --data @auth.json http://127.0.0.1:8200/v1/sys/auth/approle
+curl --header "X-Vault-Token: ????" --request POST --data @auth.json http://127.0.0.1:8200/v1/sys/auth/approle
 
-curl --header "X-Vault-Token: xxx.XXXXXXXXXXXXXXXXXXXXXXXX" --request POST --data @policies.json http://127.0.0.1:8200/v1/auth/approle/role/vaultcourse
+curl --header "X-Vault-Token: ????" --request POST --data @policies.json http://127.0.0.1:8200/v1/auth/approle/role/vaultcourse
 
-curl --header "X-Vault-Token: xxx.XXXXXXXXXXXXXXXXXXXXXXXX" http://127.0.0.1:8200/v1/auth/approle/role/vaultcourse/role-id  | jq # To fetch the role id
+curl --header "X-Vault-Token: ????" http://127.0.0.1:8200/v1/auth/approle/role/vaultcourse/role-id  | jq # To fetch the role id
 
 {
   "request_id": "b8803ccc-e7cf-fbf3-e13d-4efab0a62c06",
@@ -19,7 +19,7 @@ curl --header "X-Vault-Token: xxx.XXXXXXXXXXXXXXXXXXXXXXXX" http://127.0.0.1:820
 
 # To get a secret id
 
-curl --header "X-Vault-Token: xxx.XXXXXXXXXXXXXXXXXXXXXXXX" --request POST http://127.0.0.1:8200/v1/auth/approle/role/vaultcourse/secret-id | jq
+curl --header "X-Vault-Token: ?????" --request POST http://127.0.0.1:8200/v1/auth/approle/role/vaultcourse/secret-id | jq
 
 {
   "request_id": "7483beac-03d1-354f-8bfe-3eec73bffaed",
