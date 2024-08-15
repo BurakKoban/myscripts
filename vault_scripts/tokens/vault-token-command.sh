@@ -14,7 +14,7 @@ vault token create -ttl=5m -policy=training
 # 
 # Key                  Value
 # ---                  -----
-# token                hvs.CAESIJOjVAg5e84SQziO9y7XYhk19otQphHFZ45oBpl9SLOYGh4KHGh2cy5UR0VnNGExVHhoTE5qYWd2ZHBrWHpJTzI
+# token                ???
 # token_accessor       E3Ibsr585EmmeSaZeB3uSpdx
 # token_duration       5m
 # token_renewable      true
@@ -22,13 +22,13 @@ vault token create -ttl=5m -policy=training
 # identity_policies    []
 # policies             ["default" "training"]
 
-vault token revoke hvs.CAESIJOjVAg5e84SQziO9y7XYhk19otQphHFZ45oBpl9SLOYGh4KHGh2cy5UR0VnNGExVHhoTE5qYWd2ZHBrWHpJTzI
+vault token revoke ???
 
 # Success! Revoked token (if it existed)
 
 # To see the capabilities for a certain path with a specific token
 
-vault token capabilities hvs.CAESIJOjVAg5e84SQziO9y7XYhk19otQphHFZ45oBpl9SLOYGh4KHGh2cy5UR0VnNGExVHhoTE5qYWd2ZHBrWHpJTzI kv/data/apss/webapp
+vault token capabilities ??? kv/data/apss/webapp
 
 # read, list
 
