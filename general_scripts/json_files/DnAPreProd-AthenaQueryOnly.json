@@ -1,0 +1,40 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "athena:Get*",
+                "athena:List*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "athena:StartQueryExecution",
+            "Resource": "arn:aws:athena:us-west-2:632856304542:workgroup/test_data_science"
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+				"AWS": "arn:aws:athena:us-west-2:632856304542:workgroup/test_data_science"
+			},
+            "Action": "s3:PutObject",
+            "Resource": "arn:aws:s3:::test-bcaa-data-science/*"
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+				"AWS": "arn:aws:iam::632856304542:role/aws-reserved/sso.amazonaws.com/us-west-2/AWSReservedSSO_DnAPreProd-AthenaQueryAccess_076024aa2b34ffef"
+			},
+            "Action": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::prod-amazon-connect-ctr-ca/*",
+                "arn:aws:s3:::prod-amazon-connect-ctr/*"
+            ]
+        }
+    ]
+}

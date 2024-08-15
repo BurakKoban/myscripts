@@ -1,0 +1,40 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "AthenaAccess",
+			"Effect": "Allow",
+			"Principal": "*",
+			"Action": [
+			    "s3:GetBucketLocation",
+                "s3:GetObject",
+                "s3:List*",
+                "s3:AbortMultipartUpload",
+                "s3:PutObject"],
+			"Resource": [
+			    "arn:aws:s3:::test-bcaa-data-science",
+				"arn:aws:s3:::test-bcaa-data-science/*"
+				],
+			"Condition": {
+				"Bool": {
+					"aws:SecureTransport": "true"
+				}
+			}
+		},
+		{
+			"Sid": "AllowSSLRequestsOnly",
+			"Effect": "Deny",
+			"Principal": "*",
+			"Action": "s3:*",
+			"Resource": [
+				"arn:aws:s3:::test-bcaa-data-science",
+				"arn:aws:s3:::test-bcaa-data-science/*"
+			],
+			"Condition": {
+				"Bool": {
+					"aws:SecureTransport": "false"
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,13 @@
+{
+  "Type" : "Notification",
+  "MessageId" : "6bcd5f93-e221-5330-9b08-034f61a48201",
+  "TopicArn" : "arn:aws:sns:ca-central-1:607968612228:emr-cluster-list-topic",
+  "Subject" : "DnA Prod List of Active EMR clusters",
+  "Message" : "{'Clusters': [{'Id': 'j-2EN64RSBG8FHQ', 'Name': 'dna_fw_db_housekeeper', 'Status': {'State': 'WAITING', 'StateChangeReason': {'Message': 'Cluster ready to run steps.'}, 'Timeline': {'CreationDateTime': datetime.datetime(2023, 5, 15, 17, 0, 21, 793000, tzinfo=tzlocal()), 'ReadyDateTime': datetime.datetime(2023, 5, 15, 17, 5, 12, 197000, tzinfo=tzlocal())}}, 'NormalizedInstanceHours': 40, 'ClusterArn': 'arn:aws:elasticmapreduce:ca-central-1:607968612228:cluster/j-2EN64RSBG8FHQ'}], 'ResponseMetadata': {'RequestId': '6bb5a20f-03dd-484c-b448-43f4d24b9418', 'HTTPStatusCode': 200, 'HTTPHeaders': {'x-amzn-requestid': '6bb5a20f-03dd-484c-b448-43f4d24b9418', 'content-type': 'application/x-amz-json-1.1', 'content-length': '362', 'date': 'Mon, 15 May 2023 19:00:20 GMT'}, 'RetryAttempts': 0}}",
+  "Timestamp" : "2023-05-15T19:00:21.350Z",
+  "SignatureVersion" : "1",
+  "Signature" : "1CKVEYX4BjadJCyW/mYwXmjmxCMhKXgxyASamjZGS1i9KFHNqu8SHdwmfSmK8XaU6mhFyCdvSBvOHGO6KQ05Mf/d+j1yatki9fWP3nIRK3cqAAEDxcmFZ+/v9HO06da3IxYxSiD7y7JwXg0q+7ybugB7isNB8/BBwtSAO/uYAASh72AVsgW9ImRlcQ/tb5/ITEEpvCBYU1EGhGXtmj7J9YToIKdlNfiPvNL1id7yqLZs+i03WeIeWbLVg1OAHjJXOlvJPAsSDcXFukHl/ixQ5i9UAQcyfkNZF5B2d2L+fSnyaH6EL5GaHidTi72skX01mNcdRgjq5ureWJmcOsFA6w==",
+  "SigningCertURL" : "https://sns.ca-central-1.amazonaws.com/SimpleNotificationService-56e67fcb41f6fec09b0196692625d385.pem",
+  "UnsubscribeURL" : "https://sns.ca-central-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:ca-central-1:607968612228:emr-cluster-list-topic:7c012aac-c164-4d26-8d9e-a3689886002f"
+}
+

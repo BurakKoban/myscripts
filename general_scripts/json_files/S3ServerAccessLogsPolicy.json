@@ -1,0 +1,24 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "S3ServerAccessLogsPolicy",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "logging.s3.amazonaws.com"
+            },
+            "Action": [
+                "s3:PutObject"
+            ],
+            "Resource": "arn:aws:s3:::bcaa-s3-access-logs-for-key-buckets/data_protection_account",
+            "Condition": {
+                "ArnLike": {
+                    "aws:SourceArn": "arn:aws:s3:::bcaa-dp-commvault-1yr-lt"
+                },
+                "StringEquals": {
+                    "aws:SourceAccount": "318233034363"
+                }
+            }
+        }
+    ]
+}						

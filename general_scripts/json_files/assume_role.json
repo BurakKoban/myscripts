@@ -1,0 +1,31 @@
+// Resource policy
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sts:AssumeRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::DESTINATION-ACCOUNT-ID:role/DESTINATION-ROLENAME"
+      ]
+    }
+  ]
+}
+
+// Identity Policy (Trust relationship)
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::SOURCE-ACCOUNT-ID:user/SOURCE-USERNAME"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}

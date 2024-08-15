@@ -1,0 +1,12 @@
+VPCS	10.7.128.0/20	dopt-0236445904b78fc33	default	False	155754364360	available	vpc-0384aa0e5691eb4d9
+CIDRBLOCKASSOCIATIONSET	vpc-cidr-assoc-0c1273e9dcc84fc08	10.7.128.0/20
+CIDRBLOCKSTATE	associated
+TAGS	Department	Technology Solutions
+TAGS	flowlog	ALL
+TAGS	Environment	automation
+TAGS	Owner	Ryan Degner
+TAGS	Managed by	Terraform
+TAGS	Creator	Kevin Zhang
+TAGS	Name	automation_vpc
+TAGS	Description	VPC infrastructure of automation account
+TAGS	Project	IaC

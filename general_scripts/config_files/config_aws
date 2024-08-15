@@ -1,0 +1,66 @@
+#####################
+## AWS SSO Account ##
+#####################
+
+[profile default]
+sts_regional_endpoints = regional
+sso_start_url = https://bcaa-sso.awsapps.com/start
+sso_region = us-west-2
+sso_account_id = 155754364360
+sso_role_name = AdministratorAccess
+region = us-west-2
+output = json
+ca_bundle = /mnt/c/Users/henrys/OneDrive - BCAAOnline/Documents/CERTS/awscli-bcaa-cacert.pem
+# ca_bundle = /home/burakk/bcaa_certs/awscli-bcaa-cacert.pem
+
+
+
+[profile automation_tf]
+sts_regional_endpoints = regional
+sso_start_url = https://bcaa-sso.awsapps.com/start
+sso_region = us-west-2
+sso_account_id = 155754364360
+sso_role_name = Automation-Terraform
+region = us-west-2
+output = json
+ca_bundle = /mnt/c/Users/henrys/OneDrive - BCAAOnline/Documents/CERTS/awscli-bcaa-cacert.pem
+
+[profile automation_eks]
+sts_regional_endpoints = regional
+sso_start_url = https://bcaa-sso.awsapps.com/start
+sso_region = us-west-2
+sso_account_id = 155754364360
+sso_role_name = Automation-EKSAdmin
+region = us-west-2
+output = json
+ca_bundle = /mnt/c/Users/henrys/OneDrive - BCAAOnline/Documents/CERTS/awscli-bcaa-cacert.pem
+
+[profile ms_qa]
+sts_regional_endpoints = regional
+sso_start_url = https://bcaa-sso.awsapps.com/start
+sso_region = us-west-2
+sso_account_id = 675097064651
+sso_role_name = AdministratorAccess
+region = us-west-2
+output = json
+ca_bundle = /mnt/c/Users/henrys/OneDrive - BCAAOnline/Documents/CERTS/awscli-bcaa-cacert.pem
+
+[profile ms_qa_eks]
+sts_regional_endpoints = regional
+sso_start_url = https://bcaa-sso.awsapps.com/start
+sso_region = us-west-2
+sso_account_id = 675097064651
+sso_role_name = MSQA-EKSAdmin
+region = us-west-2
+output = json
+ca_bundle = /mnt/c/Users/henrys/OneDrive - BCAAOnline/Documents/CERTS/awscli-bcaa-cacert.pem
+
+[profile neat_prod_eks_readonly]
+sts_regional_endpoints = regional
+sso_start_url = https://bcaa-sso.awsapps.com/start
+sso_region = us-west-2
+sso_account_id = 363397377802
+sso_role_name = NeatProd-EKSReadOnlyAccess
+region = us-west-2
+output = json
+ca_bundle = /mnt/c/Users/henrys/OneDrive - BCAAOnline/Documents/CERTS/awscli-bcaa-cacert.pem

@@ -1,0 +1,828 @@
+{
+  "Rules": [
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/33fc017c99f2fc2d",
+      "Priority": "1",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "bcaa.com"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "bcaa.com"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "www.bcaa.com",
+            "Path": "/#{path}",
+            "Query": "#{query}",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/4cdcc73a208018fa",
+      "Priority": "2",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "ers-connect.bcaa.com"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "ers-connect.bcaa.com"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "d2z2xmo9iqwodv.cloudfront.net",
+            "Path": "/#{path}",
+            "Query": "#{query}",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/615a8234f92040ae",
+      "Priority": "3",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "www.playhereproject.ca"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "www.playhereproject.ca"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "www.bcaa.com",
+            "Path": "/community/bcaa-play-here",
+            "Query": "",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/77cd08c6ce0a7afa",
+      "Priority": "4",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "playhereproject.ca"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "playhereproject.ca"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "www.bcaa.com",
+            "Path": "/community/bcaa-play-here",
+            "Query": "",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/63c65fd02b0f8714",
+      "Priority": "5",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "playhereproject.com"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "playhereproject.com"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "www.bcaa.com",
+            "Path": "/community/bcaa-play-here",
+            "Query": "",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/aaa2b266abdb5ef6",
+      "Priority": "6",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "www.playhereproject.com"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "www.playhereproject.com"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "www.bcaa.com",
+            "Path": "/community/bcaa-play-here",
+            "Query": "",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/03cdbf52618466f1",
+      "Priority": "7",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "bcaaplayhere.com"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "bcaaplayhere.com"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "www.bcaa.com",
+            "Path": "/community/bcaa-play-here",
+            "Query": "",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/faff17f06eb928d7",
+      "Priority": "8",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "www.bcaaplayhere.com"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "www.bcaaplayhere.com"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "www.bcaa.com",
+            "Path": "/community/bcaa-play-here",
+            "Query": "",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/b5e573509ea8417f",
+      "Priority": "9",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "bcaaplayhereproject.ca"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "bcaaplayhereproject.ca"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "www.bcaa.com",
+            "Path": "/community/bcaa-play-here",
+            "Query": "",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/280b7cde38a18a40",
+      "Priority": "10",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "www.bcaaplayhereproject.ca"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "www.bcaaplayhereproject.ca"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "www.bcaa.com",
+            "Path": "/community/bcaa-play-here",
+            "Query": "",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/2461445e10ea9e3e",
+      "Priority": "11",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "bcaaplayhereproject.com"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "bcaaplayhereproject.com"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "www.bcaa.com",
+            "Path": "/community/bcaa-play-here",
+            "Query": "",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/7cf79f28bba3d45d",
+      "Priority": "12",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "www.bcaaplayhereproject.com"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "www.bcaaplayhereproject.com"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "www.bcaa.com",
+            "Path": "/community/bcaa-play-here",
+            "Query": "",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/dbfec329ff761803",
+      "Priority": "13",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "bcaaplayhere.ca"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "bcaaplayhere.ca"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "www.bcaa.com",
+            "Path": "/community/bcaa-play-here",
+            "Query": "",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/e85945febf12119f",
+      "Priority": "14",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "www.bcaaplayhere.ca"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "www.bcaaplayhere.ca"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "www.bcaa.com",
+            "Path": "/community/bcaa-play-here",
+            "Query": "",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/866de0dcf81043ff",
+      "Priority": "15",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "racc-connect.bcaa.com"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "racc-connect.bcaa.com"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "d2n39neno7oddi.cloudfront.net",
+            "Path": "/#{path}",
+            "Query": "#{query}",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/f8e12bbfeffe2227",
+      "Priority": "16",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "philanthropycloud.bcaa.com"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "philanthropycloud.bcaa.com"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "account.activedirectory.windowsazure.com",
+            "Path": "/applications/signin/edcff3b4-cde9-4229-8f8c-995b34243ec9",
+            "Query": "tenantId=40330b46-2607-48d4-9883-532bde40368d",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/69c34733b667de2e",
+      "Priority": "17",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "digicert.bcaa.com"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "digicert.bcaa.com"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "www.digicert.com",
+            "Path": "/account/sso/bcaa/login",
+            "Query": "#{query}",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/a262f745b03b4ebd",
+      "Priority": "18",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "uat-nlp.bcaa.com"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "uat-nlp.bcaa.com"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "vpc-datascience-es-uat-3v4ensxjumnlm76ewz7ax6i7ia.us-west-2.es.amazonaws.com",
+            "Path": "/_plugin/kibana/app/kibana",
+            "Query": "#{query}",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/cf68dd4816712c0b",
+      "Priority": "19",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "sso.bcaa.com"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "sso.bcaa.com"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "bcaa-sso.awsapps.com",
+            "Path": "/start",
+            "Query": "#{query}",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/89168ca560932e42",
+      "Priority": "20",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "help.bcaa.com"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "help.bcaa.com"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "bcaa.service-now.com",
+            "Path": "/onebcaa",
+            "Query": "#{query}",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/c1e370c74bc4b85b",
+      "Priority": "21",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "spark.bcaa.com"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "spark.bcaa.com"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "bcaaonline.sharepoint.com",
+            "Path": "/sites/spark",
+            "Query": "#{query}",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/531d9161c45c32cf",
+      "Priority": "22",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "forgot.bcaa.com"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "forgot.bcaa.com"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "passwordreset.microsoftonline.com",
+            "Path": "/#{path}",
+            "Query": "whr=bcaaonline.onmicrosoft.com",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/2f99cf4a7cd4db56",
+      "Priority": "23",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "concur.bcaa.com"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "concur.bcaa.com"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "myapps.microsoft.com",
+            "Path": "/signin/09aac715-bbd0-431b-98b3-917e6fc91df5",
+            "Query": "?tenantId=40330b46-2607-48d4-9883-532bde40368d",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/008052cf60b9fc11",
+      "Priority": "24",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "cloudapps.bcaa.com"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "cloudapps.bcaa.com"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "sts.bcaa.com",
+            "Path": "/adfs/ls/idpinitiatedsignon.aspx",
+            "Query": "#{query}",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/98908821eeda1e53",
+      "Priority": "25",
+      "Conditions": [
+        {
+          "Field": "host-header",
+          "Values": [
+            "learningcentre.bcaa.com"
+          ],
+          "HostHeaderConfig": {
+            "Values": [
+              "learningcentre.bcaa.com"
+            ]
+          }
+        }
+      ],
+      "Actions": [
+        {
+          "Type": "redirect",
+          "Order": 1,
+          "RedirectConfig": {
+            "Protocol": "HTTPS",
+            "Port": "443",
+            "Host": "aaa-bcaa.netdimensions.com",
+            "Path": "/index-sso.html",
+            "Query": "#{query}",
+            "StatusCode": "HTTP_301"
+          }
+        }
+      ],
+      "IsDefault": false
+    },
+    {
+      "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:listener-rule/app/bcaa-redirect-alb/023bcf5b0d5350a4/d9eb07dc9e26e09a/6563c4852ad39cc4",
+      "Priority": "default",
+      "Conditions": [],
+      "Actions": [
+        {
+          "Type": "forward",
+          "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:targetgroup/bcaa-redirect-tg-default/7cc892a8ccb6c07f",
+          "Order": 1,
+          "ForwardConfig": {
+            "TargetGroups": [
+              {
+                "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:474372112003:targetgroup/bcaa-redirect-tg-default/7cc892a8ccb6c07f",
+                "Weight": 1
+              }
+            ],
+            "TargetGroupStickinessConfig": {
+              "Enabled": false
+            }
+          }
+        }
+      ],
+      "IsDefault": true
+    }
+  ]
+}

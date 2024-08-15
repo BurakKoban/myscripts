@@ -1,0 +1,18 @@
+---
+schemaVersion: '2.2'
+description: 'An example of an Automation runbook that installs crowdstrike-agent groups of Amazon EC2 instances in stages.'
+# parameter:
+  # build:
+    # type: String
+    # description: "What build of CrowdStrike-agent to install"
+    # defaut: "get"
+mainSteps:
+- action: "aws:runShellScript"
+  name: "install_crowdstrike_agent"
+  inputs: 
+    runCommand: 
+      - "sudo mkdir -p /opt"
+      - "sudo yum update -y"
+      - "sudo yum install -y httpd"
+      - "sudo systemctl start httpd"
+      - "sudo systemctl enable httpd"

@@ -1,0 +1,29 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "execute-api:Invoke",
+            "Resource": "execute-api:/*/*/*",
+            "Condition" : {
+                "ForAnyValue:NotIpAddress": {
+                    "aws:SourceIp": [
+                        "72.142.53.237/32",
+                        "52.34.162.186/32",
+                        "52.38.177.188/32",
+                        "44.232.101.137/32",
+                        "44.228.230.226/32",
+                        "192.197.50.196/32"
+                    ]
+                }    
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "execute-api:Invoke",
+            "Resource": "execute-api:/*/*/*"
+        }
+    ]
+}

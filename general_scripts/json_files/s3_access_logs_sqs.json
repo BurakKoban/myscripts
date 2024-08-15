@@ -1,0 +1,45 @@
+{
+  "Version": "2012-10-17",
+  "Id": "__default_policy_ID",
+  "Statement": [
+    {
+      "Sid": "__owner_statement",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::318233034363:root"
+      },
+      "Action": "SQS:*",
+      "Resource": "arn:aws:sqs:ca-central-1:318233034363:data-protection-s3-access-logs-ca-SQS"
+    },
+    {
+      "Sid": "__sender_statement",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": "SQS:SendMessage",
+      "Resource": "arn:aws:sqs:ca-central-1:318233034363:data-protection-s3-access-logs-ca-SQS",
+      "Condition": {
+        "StringEquals": {
+          "aws:SourceAccount": "318233034363"
+        },
+        "ArnLike": {
+          "aws:SourceArn": "arn:aws:s3:*:*:data-protection-s3-access-logs-ca"
+        }
+      }
+    },
+    {
+      "Sid": "__receiver_statement",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::318233034363:user/SplunkAWSLogAccess"
+      },
+      "Action": [
+        "SQS:ChangeMessageVisibility",
+        "SQS:DeleteMessage",
+        "SQS:ReceiveMessage"
+      ],
+      "Resource": "arn:aws:sqs:ca-central-1:318233034363:data-protection-s3-access-logs-ca-SQS"
+    }
+  ]
+}

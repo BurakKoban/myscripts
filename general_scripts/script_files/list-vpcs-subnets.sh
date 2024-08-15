@@ -1,0 +1,107 @@
+aws ec2 describe-vpcs --output text > vpcs.csv
+
+# content of vpcs.csv file : 
+
+#  VPCS	10.7.128.0/20	dopt-0236445904b78fc33	default	False	155754364360	available	vpc-0384aa0e5691eb4d9
+#  CIDRBLOCKASSOCIATIONSET	vpc-cidr-assoc-0c1273e9dcc84fc08	10.7.128.0/20
+#  CIDRBLOCKSTATE	associated
+#  TAGS	Department	Technology Solutions
+#  TAGS	flowlog	ALL
+#  TAGS	Environment	automation
+#  TAGS	Owner	Ryan Degner
+#  TAGS	Managed by	Terraform
+#  TAGS	Creator	Kevin Zhang
+#  TAGS	Name	automation_vpc
+#  TAGS	Description	VPC infrastructure of automation account
+#  TAGS	Project	IaC
+
+aws ec2 describe-subnets --output text > subnets.csv
+
+# content of subnets.csv : 
+
+#  SUBNETS	False	us-west-2a	usw2-az1	424	10.7.128.0/23	False	False	False	False	False	155754364360	available	arn:aws:ec2:us-west-2:155754364360:subnet/subnet-0bd880146f27adf68	subnet-0bd880146f27adf68	vpc-0384aa0e5691eb4d9
+#  PRIVATEDNSNAMEOPTIONSONLAUNCH	False	False	ip-name
+#  TAGS	Managed by	Terraform
+#  TAGS	Creator	Kevin Zhang
+#  TAGS	Owner	Kevin Zhang
+#  TAGS	Name	automation_vpc-pri-us-west-2a-1
+#  TAGS	Description	VPC infrastructure of automation account
+#  TAGS	Project	IaC
+#  TAGS	karpenter.sh/discovery	bcaa-devops-eks
+#  TAGS	kubernetes.io/cluster	owned
+#  TAGS	Environment	automation
+#  TAGS	kubernetes.io/cluster/bcaa-devops-eks	shared
+#  TAGS	Department	Cloud Engineering and AI
+#  TAGS	kubernetes.io/role/internal-elb	1
+#  SUBNETS	False	us-west-2b	usw2-az2	505	10.7.136.0/23	False	False	False	False	True	155754364360	available	arn:aws:ec2:us-west-2:155754364360:subnet/subnet-05bc1f2a24b5053d8	subnet-05bc1f2a24b5053d8	vpc-0384aa0e5691eb4d9
+#  PRIVATEDNSNAMEOPTIONSONLAUNCH	False	False	ip-name
+#  TAGS	kubernetes.io/cluster	owned
+#  TAGS	Owner	Kevin Zhang
+#  TAGS	kubernetes.io/role/elb	1
+#  TAGS	Description	VPC infrastructure of automation account
+#  TAGS	Managed by	Terraform
+#  TAGS	Name	automation_vpc-pub-us-west-2b
+#  TAGS	Environment	automation
+#  TAGS	Department	Cloud Engineering and AI
+#  TAGS	Project	IaC
+#  TAGS	Creator	Kevin Zhang
+#  SUBNETS	False	us-west-2b	usw2-az2	416	10.7.130.0/23	False	False	False	False	False	155754364360	available	arn:aws:ec2:us-west-2:155754364360:subnet/subnet-0327161a1cbb8604e	subnet-0327161a1cbb8604e	vpc-0384aa0e5691eb4d9
+#  PRIVATEDNSNAMEOPTIONSONLAUNCH	False	False	ip-name
+#  TAGS	kubernetes.io/role/internal-elb	1
+#  TAGS	Name	automation_vpc-pri-us-west-2b-2
+#  TAGS	Description	VPC infrastructure of automation account
+#  TAGS	karpenter.sh/discovery	bcaa-devops-eks
+#  TAGS	kubernetes.io/cluster/bcaa-devops-eks	shared
+#  TAGS	Managed by	Terraform
+#  TAGS	Department	Cloud Engineering and AI
+#  TAGS	Project	IaC
+#  TAGS	Environment	automation
+#  TAGS	Owner	Kevin Zhang
+#  TAGS	kubernetes.io/cluster	owned
+#  TAGS	Creator	Kevin Zhang
+#  SUBNETS	False	us-west-2c	usw2-az3	506	10.7.138.0/23	False	False	False	False	True	155754364360	available	arn:aws:ec2:us-west-2:155754364360:subnet/subnet-067cb9a00dc2ff951	subnet-067cb9a00dc2ff951	vpc-0384aa0e5691eb4d9
+#  PRIVATEDNSNAMEOPTIONSONLAUNCH	False	False	ip-name
+#  TAGS	Description	VPC infrastructure of automation account
+#  TAGS	Creator	Kevin Zhang
+#  TAGS	Environment	automation
+#  TAGS	kubernetes.io/cluster	owned
+#  TAGS	Owner	Kevin Zhang
+#  TAGS	kubernetes.io/role/elb	1
+#  TAGS	Department	Cloud Engineering and AI
+#  TAGS	Project	IaC
+#  TAGS	Name	automation_vpc-pub-us-west-2c
+#  TAGS	Managed by	Terraform
+#  SUBNETS	False	us-west-2d	usw2-az4	505	10.7.140.0/23	False	False	False	False	False	155754364360	available	arn:aws:ec2:us-west-2:155754364360:subnet/subnet-096ca8b4936da5b33	subnet-096ca8b4936da5b33	vpc-0384aa0e5691eb4d9
+#  PRIVATEDNSNAMEOPTIONSONLAUNCH	False	False	ip-name
+#  TAGS	Name	automation_vpc-pri-us-west-2d-4
+#  SUBNETS	False	us-west-2a	usw2-az1	507	10.7.134.0/23	False	False	False	False	True	155754364360	available	arn:aws:ec2:us-west-2:155754364360:subnet/subnet-05244f0938156fe11	subnet-05244f0938156fe11	vpc-0384aa0e5691eb4d9
+#  PRIVATEDNSNAMEOPTIONSONLAUNCH	False	False	ip-name
+#  TAGS	kubernetes.io/cluster	owned
+#  TAGS	Managed by	Terraform
+#  TAGS	Department	Cloud Engineering and AI
+#  TAGS	kubernetes.io/role/elb	1
+#  TAGS	Name	automation_vpc-pub-us-west-2a
+#  TAGS	Project	IaC
+#  TAGS	Environment	automation
+#  TAGS	Creator	Kevin Zhang
+#  TAGS	Description	VPC infrastructure of automation account
+#  TAGS	Owner	Kevin Zhang
+#  SUBNETS	False	us-west-2a	usw2-az1	503	10.7.142.0/23	False	False	False	False	False	155754364360	available	arn:aws:ec2:us-west-2:155754364360:subnet/subnet-02376c9a9fef6099c	subnet-02376c9a9fef6099c	vpc-0384aa0e5691eb4d9
+#  PRIVATEDNSNAMEOPTIONSONLAUNCH	False	False	ip-name
+#  TAGS	kubernetes.io/cluster/bcaa-devops-eks	shared
+#  TAGS	karpenter.sh/discovery	bcaa-devops-eks
+#  TAGS	Name	automation_vpc-pri-us-west-2a-2
+#  SUBNETS	False	us-west-2c	usw2-az3	474	10.7.132.0/23	False	False	False	False	False	155754364360	available	arn:aws:ec2:us-west-2:155754364360:subnet/subnet-0373855f2cd253076	subnet-0373855f2cd253076	vpc-0384aa0e5691eb4d9
+#  PRIVATEDNSNAMEOPTIONSONLAUNCH	False	False	ip-name
+#  TAGS	karpenter.sh/discovery	bcaa-devops-eks
+#  TAGS	Project	IaC
+#  TAGS	kubernetes.io/cluster	owned
+#  TAGS	Creator	Kevin Zhang
+#  TAGS	Owner	Kevin Zhang
+#  TAGS	Managed by	Terraform
+#  TAGS	Description	VPC infrastructure of automation account
+#  TAGS	Environment	automation
+#  TAGS	kubernetes.io/role/internal-elb	1
+#  TAGS	Department	Cloud Engineering and AI
+#  TAGS	Name	automation_vpc-pri-us-west-2c-3
+#  TAGS	kubernetes.io/cluster/bcaa-devops-eks	shared

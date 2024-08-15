@@ -1,0 +1,62 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "athena:Get*",
+                "athena:List*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+               "glue:GetDatabases",
+               "glue:GetTables"    
+            ],
+            "Resource": [
+              "arn:aws:glue:ca-central-1:632856304542:catalog",
+              "arn:aws:glue:ca-central-1:632856304542:database/testca_gw*",  
+              "arn:aws:glue:ca-central-1:632856304542:table/testca_gw*/*"
+            ]
+          },
+        {
+            "Effect": "Allow",
+            "Action": "athena:StartQueryExecution",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:Get*",
+                "s3:List*"
+            ],
+            "Resource": [
+               "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:Get*",
+                "s3:List*",
+                "s3:AbortMultipartUpload",
+                "s3:Create*",
+                "s3:Put*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "kms:Decrypt",
+                "kms:Encrypt",
+                "kms:GenerateDataKey*"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

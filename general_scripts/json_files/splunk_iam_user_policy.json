@@ -1,0 +1,192 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "sqs:GetQueueAttributes",
+                "sqs:ListQueues",
+                "sqs:ReceiveMessage",
+                "sqs:GetQueueUrl",
+                "config:DeliverConfigSnapshot",
+                "config:Describe*",
+                "iam:List*",
+                "iam:Get*",
+                "autoscaling:Describe*",
+                "cloudwatch:Describe*",
+                "cloudwatch:Get*",
+                "cloudwatch:List*",
+                "sns:Get*",
+                "sns:List*",
+                "logs:DescribeLogGroups",
+                "logs:DescribeLogStreams",
+                "logs:GetLogEvents",
+                "ec2:Describe*",
+                "lambda:List*",
+                "lambda:Get*",
+                "cloudfront:ListDistributions",
+                "elasticloadbalancing:Describe*",
+                "inspector:Describe*",
+                "inspector:List*",
+                "kinesis:Get*",
+                "kinesis:Describe*",
+                "kinesis:List*",
+                "kms:Decrypt",
+                "sts:AssumeRole",
+                "access-analyzer:GetAnalyzer",
+                "access-analyzer:GetArchiveRule",
+                "access-analyzer:List*",
+                "account:GetAlternateContact",
+                "acm:DescribeCertificate",
+                "acm:ListCertificates",
+                "acm:ListTagsForCertificate",
+                "apigateway:GET",
+                "application-autoscaling:Describe*",
+                "backup:Describe*",
+                "backup:GetBackup*",
+                "backup:List*",
+                "cloudformation:DescribeType",
+                "cloudformation:ListTypes",
+                "cloudfront:ListTagsForResource",
+                "cloudtrail:DescribeTrails",
+                "cloudtrail:GetEventSelectors",
+                "cloudtrail:GetTrailStatus",
+                "cloudtrail:ListTags",
+                "codedeploy:GetDeploymentConfig",
+                "codepipeline:GetPipeline",
+                "codepipeline:GetPipelineState",
+                "codepipeline:ListPipelines",
+                "config:BatchGet*",
+                "config:Get*",
+                "config:List*",
+                "config:Select*",
+                "dax:DescribeClusters",
+                "dms:Describe*",
+                "dms:ListTagsForResource",
+                "dynamodb:Describe*",
+                "dynamodb:ListTables",
+                "dynamodb:ListTagsOfResource",
+                "ecr-public:DescribeRepositories",
+                "ecr-public:GetRepositoryCatalogData",
+                "ecr-public:GetRepositoryPolicy",
+                "ecr-public:ListTagsForResource",
+                "ecr:DescribeRepositories",
+                "ecr:GetLifecyclePolicy",
+                "ecr:GetRepositoryPolicy",
+                "ecr:ListTagsForResource",
+                "eks:DescribeCluster",
+                "eks:DescribeNodegroup",
+                "eks:ListClusters",
+                "eks:ListNodegroups",
+                "elasticache:Describe*",
+                "elasticache:ListTagsForResource",
+                "elasticbeanstalk:Describe*",
+                "elasticfilesystem:Describe*",
+                "elasticmapreduce:Describe*",
+                "elasticmapreduce:GetBlockPublicAccessConfiguration",
+                "elasticmapreduce:GetManagedScalingPolicy",
+                "elasticmapreduce:List*",
+                "es:Describe*",
+                "es:GetCompatibleElasticsearchVersions",
+                "es:GetCompatibleVersions",
+                "es:ListDomainNames",
+                "es:ListTags",
+                "firehose:DescribeDeliveryStream",
+                "firehose:ListDeliveryStreams",
+                "firehose:ListTagsForDeliveryStream",
+                "fsx:DescribeFileSystems",
+                "guardduty:Get*",
+                "guardduty:List*",
+                "kafka:DescribeCluster",
+                "kafka:ListClusters",
+                "kms:DescribeKey",
+                "kms:GetKeyPolicy",
+                "kms:GetKeyRotationStatus",
+                "kms:ListKeys",
+                "kms:ListResourceTags",
+                "logs:ListTagsLogGroup",
+                "network-firewall:DescribeLoggingConfiguration",
+                "network-firewall:ListFirewalls",
+                "organizations:DescribeOrganization",
+                "organizations:DescribePolicy",
+                "organizations:ListParents",
+                "organizations:ListPoliciesForTarget",
+                "rds:Describe*",
+                "rds:ListTagsForResource",
+                "redshift:Describe*",
+                "route53:GetHealthCheck",
+                "route53:GetHostedZone",
+                "route53:List*",
+                "route53resolver:Get*",
+                "route53resolver:List*",
+                "sagemaker:Describe*",
+                "sagemaker:List*",
+                "secretsmanager:ListSecrets",
+                "secretsmanager:ListSecretVersionIds",
+                "securityhub:DescribeHub",
+                "shield:Describe*",
+                "sqs:ListQueueTags",
+                "ssm:Describe*",
+                "ssm:GetAutomationExecution",
+                "ssm:GetDocument",
+                "ssm:ListDocuments",
+                "states:DescribeStateMachine",
+                "states:ListStateMachines",
+                "states:ListTagsForResource",
+                "storagegateway:List*",
+                "support:DescribeCases",
+                "tag:GetResources",
+                "waf-regional:GetLoggingConfiguration",
+                "waf-regional:GetWebACL",
+                "waf-regional:GetWebACLForResource",
+                "waf:GetLoggingConfiguration",
+                "waf:GetWebACL",
+                "wafv2:GetLoggingConfiguration"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "ForAnyValue:IpAddress": {
+                    "aws:SourceIp": [
+                        "54.218.210.10/32",
+                        "52.35.194.76/32"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "AccessFromVPCEOnly",
+            "Action": [
+                "s3:Get*",
+                "s3:List*"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "*"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "aws:SourceVpce": "vpce-069ac4196b808e59e"
+                }
+            }
+        },
+        {
+            "Sid": "AccessFromSpecificIPAdsresses",
+            "Action": [
+                "s3:Get*",
+                "s3:List*"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "*"
+            ],
+            "Condition": {
+                "ForAnyValue:IpAddress": {
+                    "aws:SourceIp": [
+                        "54.218.210.10/32",
+                        "52.35.194.76/32"
+                    ]
+                }
+            }
+        }
+    ]
+}

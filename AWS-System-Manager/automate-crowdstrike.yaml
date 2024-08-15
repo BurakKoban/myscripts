@@ -1,0 +1,46 @@
+---
+schemaVersion: '0.3'
+description: 'An example of an Automation runbook that installs crowdstrike-agent groups of Amazon EC2 instances in stages.'
+parameter:
+  InstanceId:
+    type: String
+    decscription: "Instance ID of an instance to install CrowdStrike to"
+  build:
+    type: String
+    decscription: "The build of CrowdStrike to install"
+    default: "get" #gets the default version of CrowdStrike
+mainSteps:
+  - name: AssertRunning
+    action: aws:assertAwsResourcePropety
+    isCritical: true
+    onFailure: abort
+    nextStep: installPackages
+    inputs: 
+      Service: ec2
+      Api: DescribeInstances
+      InstanceIds:
+        - "{{ InstanceId }}"
+      PropertySelector: "$.Reservation[0].Instances[0].State.Name"
+      DesiredValues:
+        - "running"
+- name: installPackages
+  action: aws:runCommand
+  inputs: 
+    DocumentName: Burak-InstallCrowdStrike
+    InstancesIds:
+      - "{{InstanceId}}"
+    Parameters:
+      build:
+        - "{{build}}"
+- name: createTags
+  action: aws:createTags
+  maxAttempts: 2
+  timeoutSeconds: 60
+  onFailure: Abort
+  inputs:
+    ResourceType: EC2
+    ResourceIds:
+    - "{{InstanceId}}"
+    Tags:
+    - Key: crowdsrikeagent-installed
+      Value: TRUE

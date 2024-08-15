@@ -1,0 +1,58 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "IAMFullPolicy",
+        "Effect": "Allow",
+        "Action": "iam:*",
+        "Resource": "*"
+      },
+      {
+        "Sid": "DenyPermBoudaryIAMPolciAlteration",
+        "Effect": "Deny",
+        "Action": [
+          "iam:DeletePolicy",
+          "iam:CreatePolicyVersion",
+          "iam:DeletePolicyVersion",
+          "iam:SetDefaultPolicyVersion"
+        ],
+        "Resource": [
+          "arn:aws:iam::${AWS::AccountId}:policy/PermissionBoundary"
+        ]
+      },
+      {
+        "Sid": "DenyRemovalofPermBoundaryFromAnyUserOrRole",
+        "Effect": "Deny",
+        "Action": [
+          "iam:DeleteUserPermissionBoundary",
+          "iam:DeleteRolePermissionBoundary"
+        ],
+        "Resource": [
+          "arn:aws:iam::${AWS::AccountId}:role/*",
+          "arn:aws:iam::${AWS::AccountId}:user/*"
+        ],
+        "Condition": {
+          "StringEquals": {
+            "iam:PermissionsBoundary": "arn:aws:iam::${AWS::AccountId}:policy/PermissionBoundary"
+          }
+        }
+      },
+      {
+        "Sid": "DenyUserAndRoleCreationWithoutPermissionBoundary",
+        "Effect": "Deny",
+        "Action": [
+          "iam:CreateUser",
+          "iam:CreateRole"
+        ],
+        "Resource": [
+          "arn:aws:iam::${AWS::AccountId}:role/*",
+          "arn:aws:iam::${AWS::AccountId}:user/*"
+        ],
+        "Condition": {
+          "StringNotEquals": {
+            "iam:PermissionsBoundary": "arn:aws:iam::${AWS::AccountId}:policy/PermissionBoundary"
+          }
+        }
+      }
+    ]
+  }

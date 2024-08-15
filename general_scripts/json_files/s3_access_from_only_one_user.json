@@ -1,0 +1,24 @@
+{
+    "Version": "2012-10-17",
+    "Id": "Policy**********",
+    "Statement": [
+        {
+            "Sid": "Stmt**********",
+            "Effect": "Deny",
+            "NotPrincipal": {
+                "AWS": "arn:aws:iam::*********:user/my_user"
+            },
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::my_bucket/*"
+        },
+        {
+            "Sid": "Stmt*************",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::**********:user/my_user"
+            },
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::my_bucket/*"
+        }
+    ]
+}

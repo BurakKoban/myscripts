@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: random-number-generator
+spec:
+  containers:
+  - image: alpine
+    name: alpine
+    command: ["/bin/sh", "-c"]
+    args: ["shuf -i 0-100 -n l >> /opt/number.out:"]
+    volumeMounts:
+    - name: data-volume
+      mountPath: /opt
+      
+
+  volumes:
+  - name: data-volume
+    hostPath:
+      path: /data
+      type: Directory
+
+  # To have the volume on aws ebs
+
+  # volumes:
+  # - name: data-volume
+  #   awsElasticBlockStore:
+  #     volumeID: vol-0c9f7d5b9b5d5b9b
+  #     fsType: ext4
+
+---
+# Example of persistent volume claim
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+    - name: myfrontend
+      image: nginx
+      volumeMounts:
+      - mountPath: "/var/www/html"
+        name: mypd
+  volumes:
+    - name: mypd
+      persistentVolumeClaim:
+        claimName: myclaim
