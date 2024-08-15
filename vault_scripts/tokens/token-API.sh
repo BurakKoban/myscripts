@@ -36,7 +36,6 @@ curl --request POST --data @payload.json http://127.0.0.1:8200/v1/auth/userpass/
 
 curl --request POST --data @payload.json http://127.0.0.1:8200/v1/auth/userpass/login/test | jq -r ".auth.client_token" # To get the token
 
-# hvs.CAESIH2SMu4-pu00j9Se3aueCRkIVNCms3MuVkoVzzBX072XGh4KHGh2cy5OWXVNYTNBckVXSGJBR3NWeGQwUDQ4eTc
 
 OUTPUT=$(curl --request POST --data @payload.json http://127.0.0.1:8200/v1/auth/userpass/login/test)
 VAULT_TOKEN=$(echo $OUTPUT | jq '.auth.client_token' -j)
