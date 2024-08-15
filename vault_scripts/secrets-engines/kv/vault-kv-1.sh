@@ -1,6 +1,6 @@
 echo $VAULT_ADDR
 export VAULT_ADDR="https://vault.ops.bcaa.bc.ca"
-export VAULT_TOKEN="hvs.XXXXXXXXXXXXXXXXXXXXXXXX"
+export VAULT_TOKEN="XXX.XXXXXXXXXXXXXXXXXXXXXXXX"
 vault login
 
 # enabling kv secret engine v1 with a custom path
