@@ -1,0 +1,67 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowSSLRequestsOnly",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::bcaa-dp-commvault-1yr-lt-canada",
+                "arn:aws:s3:::bcaa-dp-commvault-1yr-lt-canada/*"
+            ],
+            "Condition": {
+                "Bool": {
+                    "aws:SecureTransport": "false"
+                }
+            }
+        },
+        {
+            "Sid": "S3Policy1",
+            "Effect": "Allow",
+            "Principal": {
+              "AWS": "arn:aws:iam::318233034363:role/aws-service-role/config.amazonaws.com/AWSServiceRoleForConfig"
+            },
+            "Action": "s3:*",
+            "Resource": [
+              "arn:aws:s3:::bcaa-dp-commvault-1yr-lt-canada",
+              "arn:aws:s3:::bcaa-dp-commvault-1yr-lt-canada/*"
+            ]
+        },
+        {
+            "Sid": "S3Policy2",
+            "Effect": "Allow",
+            "Principal": {
+              "AWS": "arn:aws:iam::318233034363:role/aws-service-role/access-analyzer.amazonaws.com/AWSServiceRoleForAccessAnalyzer"
+            },
+            "Action": "s3:*",
+            "Resource": [
+              "arn:aws:s3:::bcaa-dp-commvault-1yr-lt-canada",
+              "arn:aws:s3:::bcaa-dp-commvault-1yr-lt-canada/*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "s3:*",
+            "Resource":  [
+                "arn:aws:s3:::bcaa-dp-commvault-1yr-lt-canada",
+                "arn:aws:s3:::bcaa-dp-commvault-1yr-lt-canada/*"
+            ],
+            "Condition": {
+                "ForAnyValue:NotIpAddress": {
+                    "aws:SourceIp": [
+                        "192.197.5.19/32",
+                        "72.142.53.237/32",
+                        "192.197.50.201/32",
+                        "44.232.101.137/32",
+                        "44.228.230.226/32",
+                        "52.60.235.50/32",
+                        "192.197.50.196/32"
+                    ]
+                }
+            }
+        }  
+    ]
+}
